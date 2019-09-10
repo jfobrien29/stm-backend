@@ -14,4 +14,4 @@ try {
 
 _.merge(config, localConfig);
 
-export {config};
+export { config };

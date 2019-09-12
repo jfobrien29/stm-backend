@@ -1,4 +1,5 @@
 import * as bodyParser from 'body-parser';
+import * as admin from 'firebase-admin';
 import { config } from './config';
 
 const express = require('express');
@@ -7,6 +8,13 @@ const cors = require('cors');
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
+
+// Parse service account from env
+const serviceAccount = JSON.parse(config.FIREBASE.SERVICE_ACCOUNT);
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: "https://skys-the-minute.firebaseio.com"
+});
 
 require('./stm/StmRoutes')(app);
 

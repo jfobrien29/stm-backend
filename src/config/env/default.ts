@@ -7,16 +7,16 @@ const config = {
         LEVEL: process.env.LOG_LEVEL || 'debug',
         SILENT: process.env.LOG_SILENT || false
     },
-    TOKEN: process.env.TOKEN || 'token',
-    RTOKEN: process.env.RTOKEN || 'rt',
-    DB: {
-        ACCOUNT: process.env.DB_ACCOUNT || 'account',
-        PASSWORD: process.env.DB_PASSWORD || 'password'
-    },
-    SPOTIFY_CLIENT_ID: process.env.CLIENT_ID || 'N/A',
-    SPOTIFY_CLIENT_SECRET: process.env.CLIENT_SECRET || 'N/A',
-    CACHE_TIME_MS: process.env.CACHE_TIME_MS || 10000,
-    CachedSession: { time: 0, data: {}}
+    FIREBASE: {
+        API_KEY: '',
+        AUTH_DOMAIN: process.env.AUTH_DOMAIN || 'none',
+        DATABASE_URL: process.env.DATABASE_URL || 'none',
+        PROJECT_ID: process.env.PROJECT_ID || 'none',
+        STORAGE_BUCKET: process.env.STORAGE_BUCKET || 'none',
+        MESSAGING_SENDER_ID: process.env.MESSAGING_SENDER_ID || 'none',
+        APP_ID: process.env.APP_ID || 'none',
+        SERVICE_ACCOUNT: process.env.SERVICE_ACCOUNT || '',
+    }
 };
 
 export { config as defaultConfig };

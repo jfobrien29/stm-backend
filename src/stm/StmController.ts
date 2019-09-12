@@ -1,4 +1,5 @@
 import StmService from './StmService';
+import { LinkData } from '../models/link';
 import { config } from '../config';
 import { logger } from '../config/logger';
 
@@ -17,6 +18,12 @@ class StmController {
     /********************************************
      * POST controllers
      ********************************************/
+
+    public postNewLink = async (req, res) => {
+        console.log('Posting link');
+        const linkData: LinkData = req.body;
+        return res.status(200).send(await StmService.postLink(linkData));
+    }
 }
 
 export default new StmController();

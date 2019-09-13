@@ -28,7 +28,7 @@ class StmController {
         try {
             const linkData: LinkData = req.body;
             const response = await StmService.postLink(linkData)
-            return res.status(200).send(response);
+            return res.status(201).send(response);
         } catch (err) {
             res.status(500).send(err);
         }

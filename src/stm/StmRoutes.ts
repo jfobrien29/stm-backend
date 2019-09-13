@@ -4,6 +4,6 @@ import StmController from './StmController';
 export = (app) => {
     const endpoint = config.API_BASE;
 
-    app.get(endpoint, StmController.getLinkData);
-    app.post(endpoint + 'postLink', StmController.postNewLink);
+    app.get(endpoint + 'link', StmController.getLinkData);
+    app.post(endpoint + 'link', StmController.postNewLink);
 };

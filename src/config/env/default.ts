@@ -8,13 +8,6 @@ const config = {
         SILENT: process.env.LOG_SILENT || false
     },
     FIREBASE: {
-        API_KEY: '',
-        AUTH_DOMAIN: process.env.AUTH_DOMAIN || 'none',
-        DATABASE_URL: process.env.DATABASE_URL || 'none',
-        PROJECT_ID: process.env.PROJECT_ID || 'none',
-        STORAGE_BUCKET: process.env.STORAGE_BUCKET || 'none',
-        MESSAGING_SENDER_ID: process.env.MESSAGING_SENDER_ID || 'none',
-        APP_ID: process.env.APP_ID || 'none',
         SERVICE_ACCOUNT: process.env.SERVICE_ACCOUNT || '',
     }
 };

@@ -29,7 +29,7 @@ export class StmService {
         return Promise.resolve();
     }
 
-    getRandomLink(links: string[]): string {
+    private getRandomLink(links: string[]): string {
         return links[Math.floor(Math.random() * links.length)];
     }
 }

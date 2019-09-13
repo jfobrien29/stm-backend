@@ -1,7 +1,6 @@
 import StmService from './StmService';
 import { LinkData } from '../models/link';
 import { config } from '../config';
-import { logger } from '../config/logger';
 
 // NOTE: This class is used for validation and response protocol for various endpoints
 class StmController {
@@ -12,7 +11,12 @@ class StmController {
 
     public getLinkData = async (req, res) => {
         console.log('Finding new link');
-        return res.status(200).send(await StmService.getSampleLinkResponse());
+        try {
+            const response = await StmService.getSampleLinkResponse();
+            return res.status(200).send(response);
+        } catch (err) {
+            res.status(500).send(err);
+        }
     }
 
     /********************************************
@@ -21,8 +25,13 @@ class StmController {
 
     public postNewLink = async (req, res) => {
         console.log('Posting link');
-        const linkData: LinkData = req.body;
-        return res.status(200).send(await StmService.postLink(linkData));
+        try {
+            const linkData: LinkData = req.body;
+            const response = await StmService.postLink(linkData)
+            return res.status(200).send(response);
+        } catch (err) {
+            res.status(500).send(err);
+        }
     }
 }
 

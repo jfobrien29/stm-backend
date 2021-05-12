@@ -32,7 +32,7 @@
     "express-validator": "^5.2.0",
     "faker": "^4.1.0",
     "firebase-admin": "^8.5.0",
-    "grpc": "^1.15.1",
+    "grpc": "^1.24.9",
     "jwt-simple": "^0.5.1",
     "lodash": "^4.17.10",
     "moment": "^2.21.0",
